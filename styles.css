@@ -151,8 +151,21 @@ header {
 }
 
 .pillar-icon {
-    font-size: 1.8rem;
-    margin-bottom: 14px;
+    width: 48px;
+    height: 48px;
+    background: rgba(79, 70, 229, 0.1);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+    color: var(--accent);
+    transition: background 0.3s ease;
+}
+
+.pillar:hover .pillar-icon {
+    background: rgba(79, 70, 229, 0.18);
 }
 
 .pillar h4 {
