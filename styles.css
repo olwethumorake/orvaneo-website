@@ -36,7 +36,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(11, 15, 20, 0.85);
+    background: rgba(11, 15, 20, 0.88);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -45,13 +45,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
 }
 
 .logo {
@@ -86,8 +79,8 @@ nav a {
 .hero-content p {
     color: var(--text-muted);
     margin-bottom: 36px;
-    font-size: 1.1rem;
-    max-width: 480px;
+    font-size: 1.05rem;
+    max-width: 520px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -105,7 +98,7 @@ nav a {
     height: 500px;
     background: var(--accent);
     filter: blur(200px);
-    opacity: 0.15;
+    opacity: 0.13;
     top: -100px;
     left: 50%;
     transform: translateX(-50%);
@@ -119,8 +112,59 @@ nav a {
 
 .section h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 14px;
     font-size: 2rem;
+}
+
+.section-sub {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 52px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* APPROACH PILLARS */
+.pillars {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pillar {
+    background: rgba(18, 24, 33, 0.8);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 32px 24px;
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    text-align: center;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pillar:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.pillar-icon {
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+}
+
+.pillar h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.pillar p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 /* CARDS */
@@ -132,45 +176,59 @@ nav a {
 }
 
 .card {
-    background: rgba(18, 24, 33, 0.8);
+    background: rgba(11, 15, 20, 0.9);
     padding: 32px 28px;
     border-radius: 16px;
     flex: 1;
     min-width: 260px;
     max-width: 320px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.06);
     text-align: left;
-    cursor: default;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: var(--accent);
-    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12);
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
 }
 
 .featured {
-    border: 1px solid var(--accent);
-    background: rgba(79, 70, 229, 0.06);
-    position: relative;
+    border-color: var(--accent);
+    background: rgba(79, 70, 229, 0.05);
 }
 
-.card h3 {
+.card-tier {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
     margin-bottom: 8px;
-    font-size: 1.2rem;
+}
+
+.card-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.card-price span {
+    color: var(--text-primary);
+    font-size: 1.4rem;
 }
 
 .card > p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     margin-bottom: 4px;
+    line-height: 1.6;
 }
 
 .card ul {
     list-style: none;
-    margin-top: 18px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -178,7 +236,7 @@ nav a {
 
 .card ul li {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -186,12 +244,12 @@ nav a {
 
 .card ul li::before {
     content: '';
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: var(--accent);
     flex-shrink: 0;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .card-cta {
@@ -201,11 +259,56 @@ nav a {
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
-    letter-spacing: 0.3px;
 }
 
 .card-cta:hover {
     text-decoration: underline;
+}
+
+/* HOW WE WORK */
+.steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.step {
+    flex: 1;
+    min-width: 140px;
+    max-width: 180px;
+    text-align: center;
+    padding: 0 8px;
+}
+
+.step-num {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.5;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.step h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.step-arrow {
+    font-size: 1.4rem;
+    color: var(--accent);
+    opacity: 0.3;
+    padding-top: 8px;
+    flex-shrink: 0;
 }
 
 /* ALT SECTION */
@@ -314,14 +417,35 @@ nav a {
 /* FOOTER */
 footer {
     padding: 36px 0;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.85rem;
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    text-align: left;
+}
+
+.footer-inner p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
 /* RESPONSIVE */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.2rem;
     }
@@ -333,5 +457,35 @@ footer {
 
     .card {
         max-width: 100%;
+        width: 100%;
+    }
+
+    .pillars {
+        gap: 16px;
+    }
+
+    .pillar {
+        min-width: 160px;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .step {
+        max-width: 100%;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+        padding: 0;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
     }
 }
