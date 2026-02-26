@@ -427,6 +427,55 @@ header {
     background: rgba(255,255,255,0.08);
 }
 
+/* CARE PLAN */
+.care-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    text-align: left;
+}
+
+.care-item {
+    background: rgba(11, 15, 20, 0.8);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 24px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.care-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.care-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: rgba(79, 70, 229, 0.1);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+}
+
+.care-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.care-item p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
 /* FOOTER */
 footer {
     padding: 36px 0;
